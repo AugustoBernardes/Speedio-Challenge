@@ -1,57 +1,27 @@
-// =========================================
-const fs = require('fs')
-const readline = require('readline')
-// =========================================
-// Importing actions
-const {gettingCNAE,gettingCNPJ,gettingDate,gettingSituation,gettingName,gettingContact,gettingAdress} = require('./Controllers/ReadDataController')
+const mongoose = require('mongoose')
+require('dotenv').config()
 // =========================================
 
-// Setting the file location
-const fileLocation = './Estabelecimentos.ESTABELE'
+// Importing action 
+// =========================================
+const {ReadFile} = require('./Controllers/ReadFileController')
 
-const readFile = () => {
-    const data = fs.createReadStream(fileLocation,'utf-8')
+// Data Base Connection
+// =========================================
+function ConnectingDataBase(){
+    const DB_KEY = process.env.DB_KEY
 
-    const rl = readline.createInterface({
-        input:data,
-    })
-    
-    let counter = 0
+    // Db connection
+    mongoose.connect(DB_KEY)   
 
-    // Reading the file Lines
-    rl.on('line', (res) => {
-    
-        // Spliting a string into an array 
-        const responseList = res.split(';');
+    const db = mongoose.connection   
 
-        // Sending data to functions
-        // =========================================
-        let CNPJ = gettingCNPJ(responseList)
-        let CNAE = gettingCNAE(responseList)
-        let Endereco = gettingAdress(responseList)
-        let SituacaoCadastral = gettingSituation(responseList)
-        let NomeFantasia = gettingName(responseList)
-        let DataDeInicio = gettingDate(responseList)
-        let Contato = gettingContact(responseList)
-        
-        // Creating the object to save on DataBase
-        let object = {
-            cnpj: CNPJ,
-            nome: NomeFantasia,
-            cnae: CNAE,
-            situacaocadastral: SituacaoCadastral,
-            inicioatividade: DataDeInicio,
-            contato: Contato,
-            endereco: Endereco,
-            id: counter,
-        }
+    db.once('error', () => {console.log("DataBase wasn't load!")})
+    db.once('open', () => {console.log('DataBase loaded!') + ReadFile()})    
 
-        console.log(object)
-        counter++
-    })
 }
 
+ConnectingDataBase();
 
-readFile();
 
 

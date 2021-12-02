@@ -4,9 +4,13 @@
   "description": "This is a challenge of Speedio to develop a sistem to read a file , structure in an object and display all data.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node readFile.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Augusto Bernardes",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "mongoose": "^6.0.14"
+  }
 }
