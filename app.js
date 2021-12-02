@@ -3,7 +3,7 @@ const fs = require('fs')
 const readline = require('readline')
 // =========================================
 // Importing actions
-const {gettingCNAE} = require('./Controllers/Actions')
+const {gettingCNAE,gettingCNPJ,gettingDate,gettingSituation,gettingName,gettingContact,gettingAdress} = require('./Controllers/ReadDataController')
 // =========================================
 
 // Setting the file location
@@ -26,14 +26,24 @@ const readFile = () => {
 
         // Sending data to functions
         // =========================================
+        let CNPJ = gettingCNPJ(responseList)
         let CNAE = gettingCNAE(responseList)
-
-        // Data de inicio esta em responseList[10]
-
-        // Creating the object to sabe on DataBase
+        let Endereco = gettingAdress(responseList)
+        let SituacaoCadastral = gettingSituation(responseList)
+        let NomeFantasia = gettingName(responseList)
+        let DataDeInicio = gettingDate(responseList)
+        let Contato = gettingContact(responseList)
+        
+        // Creating the object to save on DataBase
         let object = {
-            cnae:CNAE,
-            id:counter,
+            cnpj: CNPJ,
+            nome: NomeFantasia,
+            cnae: CNAE,
+            situacaocadastral: SituacaoCadastral,
+            inicioatividade: DataDeInicio,
+            contato: Contato,
+            endereco: Endereco,
+            id: counter,
         }
 
         console.log(object)
