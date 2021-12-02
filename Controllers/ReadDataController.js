@@ -155,8 +155,8 @@ const gettingContact = (data) => {
         const secondNumber = data[24].replace(/"/g, '')
 
         const contactData = {
-            telefone1: `${firstDDD} ${firstNumber}`,
-            telefone2: `${secondDDD} ${secondNumber}`,
+            telefone1: `${firstDDD}${firstNumber}`,
+            telefone2: `${secondDDD}${secondNumber}`,
         }
 
         return contactData
