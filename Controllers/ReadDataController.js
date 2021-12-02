@@ -1,5 +1,5 @@
 
-// Getting the CNAE
+// CNAE
 // =========================================
 const gettingCNAE = (data) => {
     try {
@@ -18,6 +18,8 @@ const gettingCNAE = (data) => {
     }
 }
 
+// CNPJ
+// =========================================
 const gettingCNPJ = (data) =>{
     try {
         // Breaking apart the CNPJ data
@@ -34,6 +36,8 @@ const gettingCNPJ = (data) =>{
     }
 }
 
+// DATE
+// =========================================
 const gettingDate = (data) => {
 
     try {
@@ -67,6 +71,8 @@ const gettingDate = (data) => {
     }
 }
 
+// SITUATION 
+// =========================================
 const gettingSituation = (data) => {
     try {
         const situation = data[5].replace(/"/g, '')   
@@ -77,6 +83,8 @@ const gettingSituation = (data) => {
     }
 }
 
+// NAME
+// =========================================
 const gettingName = (data) => {
     try {
         const name = data[4].replace(/"/g, '')
@@ -92,6 +100,8 @@ const gettingName = (data) => {
     }
 }
 
+// ADRESS
+// =========================================
 const gettingAdress = (data) => {
     try {
 
@@ -131,6 +141,9 @@ const gettingAdress = (data) => {
     }
 }
 
+
+// CONTACT
+// =========================================
 const gettingContact = (data) => {
 
     try {
