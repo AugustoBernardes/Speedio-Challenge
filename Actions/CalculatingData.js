@@ -2,7 +2,7 @@ const CompanySchema = require('../Models/CompanyModel')
 // =========================================
 
 
-const calculatingData = async () => {
+const CalculatingData = async () => {
 
     let companiesActiveSituation = [];
 
@@ -37,4 +37,4 @@ const calculatingData = async () => {
     }
 }
 
-module.exports = {calculatingData}
+module.exports = {CalculatingData}
