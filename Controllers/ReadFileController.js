@@ -10,22 +10,25 @@ const {savingOnDataBase} = require('./SavingDataController')
 // =========================================
 const fileLocation = './Estabelecimentos.ESTABELE'
 
+const data = fs.createReadStream(fileLocation,'utf-8')
+
+
+const rl = readline.createInterface({
+    input:data,
+})
+
+
 // Reading the file
 // =========================================
-const ReadFile = async () => {
+const ReadFile = async () => {    
 
-    const data = fs.createReadStream(fileLocation,'utf-8')
-
-    const rl = readline.createInterface({
-        input:data,
-    })
-        
     // Reading the file Lines
-    rl.on('line', (res) =>  {
+    await rl.on('line', (res) =>  {
+
         
         // Spliting a string into an array 
         const responseList = res.split(';');
-    
+        
         // Sending data to functions
         // =========================================
         let CNPJ = gettingCNPJ(responseList)
@@ -49,10 +52,11 @@ const ReadFile = async () => {
         }    
         
         savingOnDataBase(object)
+        
     })
 }
 
-
+ReadFile()
 
 
 module.exports = {ReadFile}

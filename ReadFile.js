@@ -8,7 +8,7 @@ const {ReadFile} = require('./Controllers/ReadFileController')
 
 // Data Base Connection
 // =========================================
-function ConnectingDataBase(){
+function ReadingFile(){
     const DB_KEY = process.env.DB_KEY
 
     // Db connection
@@ -17,11 +17,13 @@ function ConnectingDataBase(){
     const db = mongoose.connection   
 
     db.once('error', () => {console.log("DataBase wasn't load!")})
-    db.once('open', () => {console.log('DataBase loaded!') + ReadFile()})    
+    db.once('open', () => {console.log('DataBase loaded!'), ReadFile()})    
 
 }
 
-ConnectingDataBase();
+ReadingFile();
+
+module.exports = {ReadingFile}
 
 
 
