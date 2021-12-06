@@ -4,7 +4,7 @@ require('dotenv').config()
 
 // Importing action 
 // =========================================
-const {ReadFile} = require('./Controllers/ReadFileController')
+const {ReadFile} = require('../Controllers/ReadFileController')
 
 // Data Base Connection
 // =========================================

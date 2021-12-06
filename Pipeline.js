@@ -1,20 +1,12 @@
-const {pipeline} = require('stream')
-const {promisify} = require('util')
 // =========================================
 // Importing functions
-const {DisplayAllData} = require('./DisplayData')
-const {ReadingFile} = require('./ReadFile')
+const {calculatingData} = require('./Actions/CalculatingData')
+const {ReadingFile} = require('./Actions/ReadFile')
 
 
-const pipelineAsync = promisify(pipeline)
-
-
-async function run(){
-    await pipelineAsync(
-        ReadingFile,
-        DisplayAllData
-    )
+async function runningApp(){
+    await ReadingFile()
+    calculatingData()
 }
 
-run()
-console.log('Acabo!')
+runningApp()

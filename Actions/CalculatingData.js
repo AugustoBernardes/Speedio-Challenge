@@ -2,7 +2,7 @@ const CompanySchema = require('../Models/CompanyModel')
 // =========================================
 
 
-const calculatingPercentage = async () => {
+const calculatingData = async () => {
 
     let companiesActiveSituation = [];
 
@@ -29,13 +29,12 @@ const calculatingPercentage = async () => {
             console.log('Não há empresas com situação ativa!')
         }else{
             console.log(`Porcentagem de empresas com situação ativa é de aproximadamente: ${percentage.toFixed(2)}%`)
+        
         }
 
     } catch (error) {
         console.log('Happened a error!')
     }
-
-
 }
 
-module.exports = {calculatingPercentage}
+module.exports = {calculatingData}
