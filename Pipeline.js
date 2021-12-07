@@ -11,7 +11,7 @@ function RunningPipeline(){
     // Waiting for the first function to finish
     setTimeout( () => {
         CalculatingData()
-    },2000)
+    },10000)
 }
 
 RunningPipeline()

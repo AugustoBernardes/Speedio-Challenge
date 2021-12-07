@@ -21,8 +21,6 @@ function ReadingFile(){
 
 }
 
-ReadingFile();
-
 module.exports = {ReadingFile}
 
 
