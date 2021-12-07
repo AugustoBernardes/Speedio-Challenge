@@ -8,13 +8,13 @@ const gettingCNAE = (data) => {
             
         // Validating data
         if(ReceivedCNAE === ''){
-            return 'indefinido';
+            return '';
         }else{
             return ReceivedCNAE
         }
        
     } catch (error) {
-        return 'indefinido'; 
+        return ''; 
     }
 }
 
@@ -32,7 +32,7 @@ const gettingCNPJ = (data) =>{
         
         return FullCnpj;
     } catch (error) {
-        return 'indefinido'; 
+        return ''; 
     }
 }
 
@@ -62,9 +62,9 @@ const gettingDate = (data) => {
 
         // Creating a undefined object
         const undefinedDate = {
-            ano:'indefinido',
-            mes:'indefinido',
-            dia:'indefinido'
+            ano:'',
+            mes:'',
+            dia:''
         }
 
         return undefinedDate;
@@ -79,7 +79,7 @@ const gettingSituation = (data) => {
 
         return situation;
     } catch (error) {
-        return 'indefinido'
+        return ''
     }
 }
 
@@ -90,13 +90,13 @@ const gettingName = (data) => {
         const name = data[4].replace(/"/g, '')
 
         if(name === ''){
-            return 'indefinido';
+            return '';
         }else{
             return name;
         }
 
     } catch (error) {
-        return 'indefinido';
+        return '';
     }
 }
 
@@ -129,12 +129,12 @@ const gettingAdress = (data) => {
     } catch (error) {
 
         const undefinedAdress = {
-            logradouro:'indefinido',
-            numero:'indefinido',
-            complemento:'indefinido',
-            bairro:'indefinido',
-            cep:'indefinido',
-            uf:'indefinido'
+            logradouro:'',
+            numero:'',
+            complemento:'',
+            bairro:'',
+            cep:'',
+            uf:''
         }
         
         return undefinedAdress;
@@ -162,8 +162,8 @@ const gettingContact = (data) => {
         return contactData
     } catch (error) {
         const undefinedContact = {
-            telefone1: `indefinido`,
-            telefone2: `indefinido`
+            telefone1: '',
+            telefone2: ''
         }
 
         return undefinedContact
