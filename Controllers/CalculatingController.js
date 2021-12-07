@@ -1,5 +1,8 @@
 
-
+let restaurants = [];
+let years = [];
+// Percentage
+// =========================================
 function calculatingPercentage(activeComp,allCompanies ){
     // Calculating percentage
     // =========================================
@@ -9,15 +12,28 @@ function calculatingPercentage(activeComp,allCompanies ){
 
     let percentage = (multiplicating / allCompanies.length)
 
-    return percentage
+    return percentage.toFixed(2)
+}
 
+// Getting the years
+// =========================================
+function gettingYears(){
+    restaurants.forEach(restaurant => {
+        let year = restaurant.inicioatividade.ano
+
+        // Removing the duplicated years
+        if(years.includes(year) === false){
+            years.push(year)
+        }
+    })
+    return years
 }
 
 // Restaurants
 // =========================================
-let restaurants = [];
+
 function coutingRestaurants(companies){
-    if(companies === 0){
+    if(companies.length === 0){
         console.log('Não há empresas com situação ativa!')
     }else{
 
@@ -35,4 +51,4 @@ function coutingRestaurants(companies){
     return restaurants.length;
 }
 
-module.exports = {calculatingPercentage,coutingRestaurants}
+module.exports = {calculatingPercentage,coutingRestaurants,gettingYears}
