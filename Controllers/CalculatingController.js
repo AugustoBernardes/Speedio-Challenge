@@ -1,6 +1,6 @@
-
 let restaurants = [];
 let years = [];
+let counting = [];
 // Percentage
 // =========================================
 function calculatingPercentage(activeComp,allCompanies ){
@@ -29,6 +29,35 @@ function gettingYears(){
     return years
 }
 
+function validatingRestaurants(){
+    let years = gettingYears()
+
+    years.forEach(year => {
+        let data = {
+            ano:year,
+            counter:0
+        }
+
+        counting.push(data)
+    })
+ 
+    restaurants.forEach(restaurant => {
+        let validateYear = restaurant.inicioatividade.ano
+        
+        counting.forEach(data => {
+            let year = data.ano
+            
+            if(validateYear == year){
+                data.counter = data.counter + 1
+            }
+
+        })
+    })
+
+    return counting
+}
+
+
 // Restaurants
 // =========================================
 
@@ -51,4 +80,4 @@ function coutingRestaurants(companies){
     return restaurants.length;
 }
 
-module.exports = {calculatingPercentage,coutingRestaurants,gettingYears}
+module.exports = {calculatingPercentage,coutingRestaurants,validatingRestaurants}

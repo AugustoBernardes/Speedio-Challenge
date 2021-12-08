@@ -4,8 +4,7 @@
   "description": "This is a challenge of Speedio to develop a sistem to read a file , structure in an object and display all data.",
   "main": "app.js",
   "scripts": {
-    "read":"node ReadFile.js",
-    "display":"node DisplayData.js"
+    "start": "node ./Pipeline"
   },
   "author": "Augusto Bernardes",
   "license": "ISC",

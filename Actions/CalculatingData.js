@@ -1,5 +1,5 @@
 const CompanySchema = require('../Models/CompanyModel')
-const {calculatingPercentage,coutingRestaurants,gettingYears} = require('../Controllers/CalculatingController')
+const {calculatingPercentage,coutingRestaurants,validatingRestaurants} = require('../Controllers/CalculatingController')
 // =========================================
 
 
@@ -20,9 +20,12 @@ const CalculatingData = async () => {
         });
 
         //Showing informations
-        console.log(`Possuem ${coutingRestaurants(companies)} restaurantes!`)
         console.log(`Porcentagem é de: ${calculatingPercentage(companiesActiveSituation,companies)}%`)
-        console.log(gettingYears())
+        console.log(`Possuem ${coutingRestaurants(companies)} restaurantes!`)
+        let restaurantsPerYear = validatingRestaurants()
+        restaurantsPerYear.forEach(restaurant => {
+            console.log(`No ano de ${restaurant.ano}, abriram ${restaurant.counter} restaurantes!`)
+        });
         
         
     } catch (error) {
