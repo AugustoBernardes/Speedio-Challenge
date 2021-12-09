@@ -11,6 +11,7 @@
 + Display how many companies in the restaurant sector were opened each year.
 ---
 ## Observations 
++ To run the app use NPM start
 + To dowload the packages use NPM install
 + Don't forget to change the file (.env_example) to (.env)
 + On .env put all your variables 
