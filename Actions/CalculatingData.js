@@ -11,6 +11,7 @@ const CalculatingData = async () => {
         let companies = await  CompanySchema.find({})
 
         // Putting a part the data
+        // =========================================
         companies.forEach(data => {
             let company = data;
 
@@ -20,13 +21,17 @@ const CalculatingData = async () => {
         });
 
         //Showing informations
+        // =========================================
+
+        // Percentage
         console.log(`Porcentagem é de: ${calculatingPercentage(companiesActiveSituation,companies)}%`)
+        // Restaurants numbers
         console.log(`Possuem ${coutingRestaurants(companies)} restaurantes!`)
+        // Display restaurants per year
         let restaurantsPerYear = validatingRestaurants()
         restaurantsPerYear.forEach(restaurant => {
             console.log(`No ano de ${restaurant.ano}, abriram ${restaurant.counter} restaurantes!`)
         });
-        
         
     } catch (error) {
         console.log(error)
