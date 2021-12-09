@@ -24,7 +24,7 @@ const CalculatingData = async () => {
         // =========================================
 
         // Percentage
-        console.log(`Porcentagem é de: ${calculatingPercentage(companiesActiveSituation,companies)}% empresas com situações ativas!`)
+        console.log(`Porcentagem é de: ${calculatingPercentage(companiesActiveSituation,companies)}% das empresas com situações ativas!`)
         // Restaurants numbers
         console.log(`Possuem ${coutingRestaurants(companies)} restaurantes!`)
         // Display restaurants per year
