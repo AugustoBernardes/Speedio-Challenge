@@ -12,7 +12,7 @@
 ---
 ## Observations 
 + To dowload the packages use NPM install
-+ Don't forget to change the file (.env_example) to (.env )
++ Don't forget to change the file (.env_example) to (.env)
 + On .env put all your variables 
 + [Video explaining how the system works](https://www.youtube.com/watch?v=2S2_n38zeGY)
 ---
